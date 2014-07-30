@@ -6,7 +6,7 @@ import ExecutionContext.Implicits.global
 object Example1 {
 	def main(args: Array[String]): Unit = {
 	  
-	  val f = future {
+	  val f = Future {
 	    val v = (1 to 20000).reduce(_+_)
 	    
 	    println(v)

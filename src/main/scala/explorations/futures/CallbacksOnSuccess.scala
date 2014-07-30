@@ -2,11 +2,12 @@ package explorations.futures
 
 import scala.concurrent._
 import ExecutionContext.Implicits.global
+import scala.io.StdIn
 
 object CallbacksOnSuccess {
 
   def main(args: Array[String]): Unit = {
-    val f = future {
+    val f = Future {
       3/0 // To provoke an exception
     }
     
@@ -28,7 +29,7 @@ object CallbacksOnSuccess {
       case e => println(e.getMessage)
     }
     
-    Console.readLine
+    StdIn.readLine
   }
 
 }
