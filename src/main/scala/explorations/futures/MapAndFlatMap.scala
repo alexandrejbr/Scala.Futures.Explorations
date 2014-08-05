@@ -24,7 +24,7 @@ object MapAndFlatMap {
     println(theImplementationDoesntBlock)
   }
 
-  def factorial(n: Int) = Future { (1 to n).fold(1)(_ * _) }
+  def factorial(n: Int) = Future { (1 to n).reduce(_ * _) }
 
   // I wanted Future[Int] and I'm stuck with Future[Future[Int]]. The caller has to deal with all the madness
   def factorialOfFactorialWithProblem(n: Int): Future[Future[Int]] = {
